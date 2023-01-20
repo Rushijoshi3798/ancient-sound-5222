@@ -1,297 +1,185 @@
-import React from 'react'
+import React from "react";
 import {
-    Box,
-    Flex,
-    Text,
-    IconButton,
-    Button,
-    Stack,
-    Collapse,
-    Icon,
-    Link,
-    Popover,
-    PopoverTrigger,
-    PopoverContent,
-    useColorModeValue,
-    useBreakpointValue,
-    useDisclosure,
-    Image,
-  } from '@chakra-ui/react';
-  import {
-    HamburgerIcon,
-    CloseIcon,
-    ChevronDownIcon,
-    ChevronRightIcon,
-  } from '@chakra-ui/icons';
+  Avatar,
+  Box,
+  Button,
+  Flex,
+  HStack,
+  IconButton,
+  Image,
+  Input,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
+  Text,
+} from "@chakra-ui/react";
+import {
+  ChevronRightIcon,
+  SearchIcon,
+  TriangleDownIcon,
+} from "@chakra-ui/icons";
+import {MdLocationOn , } from "react-icons/md";
+import { BsFillBagCheckFill } from "react-icons/bs";
 
 const Navbar = () => {
-
-    const { isOpen, onToggle } = useDisclosure();
-
-
   return (
-    <Box>
+    <div>
       <Flex
-        bg={useColorModeValue('white', 'gray.800')}
-        color={useColorModeValue('gray.600', 'white')}
-        minH={'60px'}
-        py={{ base: 2 }}
-        px={{ base: 4 }}
-        borderBottom={1}
-        borderStyle={'solid'}
-        borderColor={useColorModeValue('gray.200', 'gray.900')}
-        align={'center'}>
-        <Flex
-          flex={{ base: 1, md: 'auto' }}
-          ml={{ base: -2 }}
-          display={{ base: 'flex', md: 'none' }}>
+        justifyContent={"space-between"}
+        marginLeft={"20px"}
+        marginRight={"20px"}>
+        <HStack>
+          <Image
+            h="75px"
+            w="150px"
+            src="https://i.postimg.cc/BvrQ8nmK/Glamzone-logo-DSW-clone.png"
+            alt="Brand_Logo"
+          />
+          <Input
+            marginTop={["2px", "5px", "5px"]}
+            borderRadius="none"
+            borderColor={["white"]}
+            w="400px"
+            placeholder="Search Styles, brands & more"
+            _placeholder={{
+              opacity: 1,
+              color: "gray.500",
+              fontFamily: "Roboto, Helvetica, Arial, sans-serif;",
+              fontSize: "14px",
+            }}
+            size="sm"
+            type="text"
+            focusBorderColor="white"
+            backgroundColor={"#f0f0f0"}
+          />
           <IconButton
-            onClick={onToggle}
-            icon={
-              isOpen ? <CloseIcon w={3} h={3} /> : <HamburgerIcon w={5} h={5} />
-            }
-            variant={'ghost'}
-            aria-label={'Toggle Navigation'}
+            bg="#f0f0f0"
+            borderRadius={"none"}
+            size={"sm"}
+            aria-label="Search database"
+            icon={<SearchIcon />}
           />
+        </HStack>
+
+        <HStack>
+        <Flex >
+          <Menu>
+            <MenuButton
+            
+              // border={"1px solid black"}
+              background="none"
+              borderRadius={"none"}
+              _hover={{ borderBottom: "2px solid black" }}
+              as={Button}
+              fontFamily={"Roboto, Helvetica, Arial, sans-serif"}
+              fontSize={"13px"}
+              color="grey.200"
+              rightIcon={<TriangleDownIcon />}>
+              <HStack>
+                <Avatar name={``} size="sm" src="https://bit.ly/broken-link" />
+                <Text fontStyle={""} fontFamily={"Roboto, Helvetica, Arial, sans-serif"} fontSize={"13px"}>Sign in</Text>
+              </HStack>
+            </MenuButton>
+            <MenuList
+              boxShadow={{
+                sm: "none",
+                md: "none",
+                lg: "rgba(0, 0, 0, 0.16) 0px 1px 4px",
+              }}
+              border={{
+              sm: "none",
+              md: "none",
+              lg: "none"}}
+              w={["100px", "250px", "200px"]}>
+              <MenuItem
+                _hover={{ textDecoration: "underline", background: "none" }}>
+                <Box
+                  paddingY={1}
+                  paddingX={2}
+                  fontSize={"14px"}
+                  color="#000000"
+                  fontFamily={"Roboto, Helvetica, Arial, sans-serif;"}
+                  w={["100px", "150px", "200px"]}>
+                  Sign In
+                </Box>
+                <ChevronRightIcon />
+              </MenuItem>
+
+              <MenuItem
+                _hover={{ textDecoration: "underline", background: "none" }}>
+                <Box
+                  paddingY={1}
+                  paddingX={2}
+                  fontSize={"14px"}
+                  color="#000000"
+                  fontFamily={"Roboto, Helvetica, Arial, sans-serif;"}
+                  w={["100px", "150px", "200px"]}>
+                  My orders
+                </Box>
+                <ChevronRightIcon />
+              </MenuItem>
+
+              <MenuItem
+                _hover={{ textDecoration: "underline", background: "none" }}>
+                <Box
+                  paddingY={1}
+                  paddingX={2}
+                  fontSize={"14px"}
+                  color="#000000"
+                  fontFamily={"Roboto, Helvetica, Arial, sans-serif;"}
+                  w={["100px", "150px", "200px"]}>
+                  My Favourite
+                </Box>
+                <ChevronRightIcon />
+              </MenuItem>
+
+              <MenuItem
+                _hover={{ textDecoration: "underline", background: "none" }}>
+                <Box
+                  paddingY={1}
+                  paddingX={2}
+                  fontSize={"14px"}
+                  color="#000000"
+                  fontFamily={"Roboto, Helvetica, Arial, sans-serif;"}
+                  w={["100px", "150px", "200px"]}>
+                  My VIP Rewards
+                </Box>
+                <ChevronRightIcon />
+              </MenuItem>
+            </MenuList>
+          </Menu>
+          
         </Flex>
-        <Flex flex={{ base: 1 }} justify={{ base: 'center', md: 'start' }}>
-          <Text
-            textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
-            fontFamily={'heading'}
-            color={useColorModeValue('gray.800', 'white')}>
-            <Image src="" />
-          </Text>
-
-          <Flex display={{ base: 'none', md: 'flex' }} ml={10}>
-            <DesktopNav />
-          </Flex>
+        <Flex 
+          marginLeft={"0px"}
+          // border={"1px solid black"}
+          background="none"
+          borderRadius={"none"}
+          paddingY={2.5}
+          paddingX={2}
+          _hover={{ borderBottom: "2px solid black" }}>
+          <MdLocationOn />{" "}
+          <Text marginInlineStart={"5px"} fontSize={"14px"}>Find a Store</Text>
         </Flex>
 
-        <Stack
-          flex={{ base: 1, md: 0 }}
-          justify={'flex-end'}
-          direction={'row'}
-          spacing={6}>
-          <Button
-            as={'a'}
-            fontSize={'sm'}
-            fontWeight={400}
-            variant={'link'}
-            href={'#'}>
-            Sign In
-          </Button>
-          <Button
-            display={{ base: 'none', md: 'inline-flex' }}
-            fontSize={'sm'}
-            fontWeight={600}
-            color={'white'}
-            bg={'pink.400'}
-            href={'#'}
-            _hover={{
-              bg: 'pink.300',
-            }}>
-            Sign Up
-          </Button>
-        </Stack>
-      </Flex>
-
-      <Collapse in={isOpen} animateOpacity>
-        <MobileNav />
-      </Collapse>
-    </Box>
-  );
-}
-
-const DesktopNav = () => {
-  const linkColor = useColorModeValue('gray.600', 'gray.200');
-  const linkHoverColor = useColorModeValue('gray.800', 'white');
-  const popoverContentBgColor = useColorModeValue('white', 'gray.800');
-
-  return (
-    <Stack direction={'row'} spacing={4}>
-      {NAV_ITEMS.map((navItem) => (
-        <Box key={navItem.label}>
-          <Popover trigger={'hover'} placement={'bottom-start'}>
-            <PopoverTrigger>
-              <Link
-                p={2}
-                href={navItem.href ?? '#'}
-                fontSize={'sm'}
-                fontWeight={500}
-                color={linkColor}
-                _hover={{
-                  textDecoration: 'none',
-                  color: linkHoverColor,
-                }}>
-                {navItem.label}
-              </Link>
-            </PopoverTrigger>
-
-            {navItem.children && (
-              <PopoverContent
-                border={0}
-                boxShadow={'xl'}
-                bg={popoverContentBgColor}
-                p={4}
-                rounded={'xl'}
-                minW={'sm'}>
-                <Stack>
-                  {navItem.children.map((child) => (
-                    <DesktopSubNav key={child.label} {...child} />
-                  ))}
-                </Stack>
-              </PopoverContent>
-            )}
-          </Popover>
-        </Box>
-      ))}
-    </Stack>
-  );
-};
-
-const DesktopSubNav = ({ label, href, subLabel }: NavItem) => {
-  return (
-    <Link
-      href={href}
-      role={'group'}
-      display={'block'}
-      p={2}
-      rounded={'md'}
-      _hover={{ bg: useColorModeValue('pink.50', 'gray.900') }}>
-      <Stack direction={'row'} align={'center'}>
-        <Box>
-          <Text
-            transition={'all .3s ease'}
-            _groupHover={{ color: 'pink.400' }}
-            fontWeight={500}>
-            {label}
-          </Text>
-          <Text fontSize={'sm'}>{subLabel}</Text>
-        </Box>
         <Flex
-          transition={'all .3s ease'}
-          transform={'translateX(-10px)'}
-          opacity={0}
-          _groupHover={{ opacity: '100%', transform: 'translateX(0)' }}
-          justify={'flex-end'}
-          align={'center'}
-          flex={1}>
-          <Icon color={'pink.400'} w={5} h={5} as={ChevronRightIcon} />
+        marginLeft={"0px"}
+        // border={"1px solid black"}
+        background="none"
+        borderRadius={"none"}
+        paddingY={2.5}
+        paddingX={2}
+        _hover={{ borderBottom: "2px solid black" }}>
+          <BsFillBagCheckFill />
+          <Text marginInlineStart={"10px"} fontSize={"14px"}>Bag</Text>
         </Flex>
-      </Stack>
-    </Link>
-  );
-};
-
-const MobileNav = () => {
-  return (
-    <Stack
-      bg={useColorModeValue('white', 'gray.800')}
-      p={4}
-      display={{ md: 'none' }}>
-      {NAV_ITEMS.map((navItem) => (
-        <MobileNavItem key={navItem.label} {...navItem} />
-      ))}
-    </Stack>
-  );
-};
-
-const MobileNavItem = ({ label, children, href }: NavItem) => {
-  const { isOpen, onToggle } = useDisclosure();
-
-  return (
-    <Stack spacing={4} onClick={children && onToggle}>
-      <Flex
-        py={2}
-        as={Link}
-        href={href ?? '#'}
-        justify={'space-between'}
-        align={'center'}
-        _hover={{
-          textDecoration: 'none',
-        }}>
-        <Text
-          fontWeight={600}
-          color={useColorModeValue('gray.600', 'gray.200')}>
-          {label}
-        </Text>
-        {children && (
-          <Icon
-            as={ChevronDownIcon}
-            transition={'all .25s ease-in-out'}
-            transform={isOpen ? 'rotate(180deg)' : ''}
-            w={6}
-            h={6}
-          />
-        )}
+       
+        </HStack>
       </Flex>
-
-      <Collapse in={isOpen} animateOpacity style={{ marginTop: '0!important' }}>
-        <Stack
-          mt={2}
-          pl={4}
-          borderLeft={1}
-          borderStyle={'solid'}
-          borderColor={useColorModeValue('gray.200', 'gray.700')}
-          align={'start'}>
-          {children &&
-            children.map((child) => (
-              <Link key={child.label} py={2} href={child.href}>
-                {child.label}
-              </Link>
-            ))}
-        </Stack>
-      </Collapse>
-    </Stack>
+      <Box></Box>
+    </div>
   );
 };
 
-interface NavItem {
-  label: string;
-  subLabel?: string;
-  children?: Array<NavItem>;
-  href?: string;
-}
-
-const NAV_ITEMS: Array<NavItem> = [
-  {
-    label: 'Inspiration',
-    children: [
-      {
-        label: 'Explore Design Work',
-        subLabel: 'Trending Design to inspire you',
-        href: '#',
-      },
-      {
-        label: 'New & Noteworthy',
-        subLabel: 'Up-and-coming Designers',
-        href: '#',
-      },
-    ],
-  },
-  {
-    label: 'Find Work',
-    children: [
-      {
-        label: 'Job Board',
-        subLabel: 'Find your dream design job',
-        href: '#',
-      },
-      {
-        label: 'Freelance Projects',
-        subLabel: 'An exclusive list for contract work',
-        href: '#',
-      },
-    ],
-  },
-  {
-    label: 'Learn Design',
-    href: '#',
-  },
-  {
-    label: 'Hire Designers',
-    href: '#',
-  },
-];
-
-export default Navbar
+export default Navbar;
