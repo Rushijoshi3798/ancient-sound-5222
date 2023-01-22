@@ -15,7 +15,7 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <div style={{marginTop: "50px", width: "100%" }}>
+      <div style={{ width: "100%" }}>
         <div
           style={{
             position: "relative",
@@ -30,7 +30,7 @@ const Home = () => {
             style={{
               border: "none",
               position: "absolute",
-              top: "30%",
+              top: "40%",
               left: "50%",
               transform: "translate(-50%, -50%)",
               MediaStreamTransform: "translate(-50%, -50%)",
@@ -49,7 +49,7 @@ const Home = () => {
             style={{
               border: "none",
               position: "absolute",
-              top: "42%",
+              top: "52%",
               left: "50%",
               transform: "translate(-50%, -50%)",
               MediaStreamTransform: "translate(-50%, -50%)",
@@ -68,7 +68,7 @@ const Home = () => {
           <button
             style={{
               position: "absolute",
-              top: "50%",
+              top: "60%",
               left: "43%",
               transform: "translate(-50%, -50%)",
               MediaStreamTransform: "translate(-50%, -50%)",
@@ -88,7 +88,7 @@ const Home = () => {
           <button
             style={{
               position: "absolute",
-              top: "50%",
+              top: "60%",
               left: "57%",
               transform: "translate(-50%, -50%)",
               MediaStreamTransform: "translate(-50%, -50%)",
