@@ -1,12 +1,11 @@
 import {
   Box,
-  
-  
   Grid,
   GridItem,
+  HStack,
   Image,
- 
   Text,
+  VStack,
 } from "@chakra-ui/react";
 import React from "react";
 import Navbar from "../Components/Navbar";
@@ -209,7 +208,7 @@ const Home = () => {
             />
             <Text
               fontSize="16px"
-              marginTop={"5px"}
+              marginTop={"20px"}
               fontWeight={"bold"}
               cursor={"pointer"}>
               Your New Favorite Lug-Sole Boots
@@ -224,7 +223,7 @@ const Home = () => {
             />
             <Text
               fontSize="16px"
-              marginTop={"5px"}
+              marginTop={"20px"}
               fontWeight={"bold"}
               cursor={"pointer"}>
               Dress-Up-or-Down Booties
@@ -239,7 +238,7 @@ const Home = () => {
             />
             <Text
               fontSize="16px"
-              marginTop={"5px"}
+              marginTop={"20px"}
               fontWeight={"bold"}
               cursor={"pointer"}>
               Outfit-Elevating Platform Boots
@@ -340,6 +339,108 @@ const Home = () => {
           </button>
         </div>
       </div>
+
+      <HStack
+        border={"1px solid black"}
+        marginTop={"20px"}
+        marginBottom={"20px"}
+        p={10}>
+        <Box w={"20%"}>
+          <Text fontWeight={"medium"} fontSize={"30px"}>
+            New Markdowns, Right This Way
+          </Text>
+        </Box>
+        <HStack px={8}>
+          <VStack bg={"#f8f8f8"} h={"190px"}>
+            <Image
+              w={"200px"}
+              h={"130px"}
+              src="https://images.dsw.com/is/image/DSWShoes/P221473_funnel_w-clearance?impolicy=qlt-medium&imwidth=300&imdensity=1"
+            />
+            <Text fontSize={"14px"} color={"grey"}>
+              Women's
+            </Text>
+            <Text
+              fontSize={"14px"}
+              color={"black"}
+              marginBottom={"20px"}
+              fontWeight={"bold"}>
+              Clearance
+            </Text>
+          </VStack>
+
+          <VStack bg={"#f8f8f8"} h={"190px"}>
+            <Image
+              w={"200px"}
+              h={"130px"}
+              src="https://images.dsw.com/is/image/DSWShoes/P221473_funnel_m-clearance?impolicy=qlt-medium&imwidth=300&imdensity=1"
+            />
+            <Text fontSize={"14px"} color={"grey"}>
+              Men's
+            </Text>
+            <Text
+              fontSize={"14px"}
+              color={"black"}
+              marginBottom={"20px"}
+              fontWeight={"bold"}>
+              Clearance
+            </Text>
+          </VStack>
+
+          <VStack bg={"#f8f8f8"} h={"190px"}>
+            <Image
+              w={"200px"}
+              h={"130px"}
+              src="https://images.dsw.com/is/image/DSWShoes/P221473_funnel_k-clearance?impolicy=qlt-medium&imwidth=300&imdensity=1"
+            />
+            <Text fontSize={"14px"} color={"grey"}>
+              Kids'
+            </Text>
+            <Text
+              fontSize={"14px"}
+              color={"black"}
+              marginBottom={"20px"}
+              fontWeight={"bold"}>
+              Clearance
+            </Text>
+          </VStack>
+
+          <VStack bg={"#f8f8f8"} h={"190px"}>
+            <Image
+              w={"200px"}
+              h={"130px"}
+              src="https://images.dsw.com/is/image/DSWShoes/P221473_funnel_under75?impolicy=qlt-medium&imwidth=300&imdensity=1"
+            />
+            <Text fontSize={"14px"} marginBottom={"20px"} color={"grey"}>
+              Womens'
+            </Text>
+            <Text fontSize={"14px"} color={"black"} fontWeight={"bold"}>
+              Under $75
+            </Text>
+          </VStack>
+
+          <VStack bg={"#f8f8f8"} h={"190px"}>
+            <Image
+              w={"200px"}
+              h={"130px"}
+              src="https://images.dsw.com/is/image/DSWShoes/P221473_funnel_under70?impolicy=qlt-medium&imwidth=300&imdensity=1"
+            />
+            <Text
+              // border={"1px solid black"}
+              fontSize={"14px"}
+              color={"grey"}>
+              Womens'
+            </Text>
+            <Text
+              fontSize={"14px"}
+              color={"black"}
+              marginBottom={"20px"}
+              fontWeight={"bold"}>
+              Boots Under $70
+            </Text>
+          </VStack>
+        </HStack>
+      </HStack>
 
       <Box></Box>
     </div>
