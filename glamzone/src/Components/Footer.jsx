@@ -129,7 +129,7 @@ const Footer = () => {
           </Stack>
           <Stack fontFamily={"sans-serif"} fontWeight={"bold"} fontSize={"14px"} align={"flex-start"}>
             <ListHeader>EXPLORE US</ListHeader>
-            <Link href={"#"}>DSW VIP</Link>
+            <Link href={"#"}>GLAMZONE VIP</Link>
             <Link href={"#"}>Terms of Service</Link>
             <Link href={"#"}>Legal</Link>
             <Link href={"#"}>Privacy Policy</Link>
