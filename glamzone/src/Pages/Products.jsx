@@ -19,14 +19,33 @@ const Products =  ()  => {
   }, [url]);
 
   const handleSort =  (e) => {
-    let sortValue = e.target.value;
-     axios.get(`${url}`, {
-      params: {
-        order: sortValue,
-        sort: "price"
+    let dataArr;
+    console.log(e.target.value)
+   let eventName = e.target.value;
+    axios.get(url).then((res) => {
+      console.log(res.data);
+      dataArr = res.data;
+      if(eventName == "asc"){
+        console.log("helloooooooo")
+        dataArr.sort((a,b) => {
+          return a.price - b.price
+        })
+  
+        setData(dataArr)
+        console.log(dataArr)
+      } else {
+  
+        dataArr.sort((a,b) => {
+          return b.price - a.price
+        })
+  
+        setData(dataArr)
+        console.log(dataArr)
       }
-     })
-    .then((res)=> setData(res.data))
+    });
+
+    
+     
   }
 
   return (
@@ -46,17 +65,19 @@ const Products =  ()  => {
         </Button>
         <Button
         value="desc"
-        onClick={(e)=> handleSort}
+        onClick={(e)=> {
+          handleSort(e)
+        }}
           color={"white"}
           background={"black"}
           _hover={{ color: "white", background: "#464b51" }}>
           Sort: High to Low
         </Button>
       </Box>
-      <Grid px={10} p={10} templateColumns="repeat(3, 1fr)" gap={10}>
+      <Grid px={10} p={10} templateColumns={["repeat(1, 1fr)","repeat(2, 1fr)","repeat(3, 1fr)"]} gap={10}>
         {data.map((el) => (
-          <Card p={"2"} h={"auto"} key={el.id}>
-            <Image marginBottom={"20px"} h={"400px"} src={el.image} />
+          <Card  p={"2"} h={"auto"} key={el.id}>
+            <Image p={6} marginBottom={"20px"} h={"400px"} src={el.image} />
             <Text fontSize={"16px"} marginBottom={"20px"}>
               {el.title}
             </Text>
@@ -66,7 +87,7 @@ const Products =  ()  => {
             <Text fontSize={"16px"} marginBottom={"20px"}>
               {el.price}
             </Text>
-            <Button>Buy Now</Button>
+            <Button color={"white"} background={"black"} _hover={{color:"white", background:"grey.700"}}>Buy Now</Button>
           </Card>
         ))}
       </Grid>

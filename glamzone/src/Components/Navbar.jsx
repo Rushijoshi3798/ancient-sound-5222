@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
   Avatar,
   Box,
@@ -22,8 +22,11 @@ import {
 import { MdLocationOn } from "react-icons/md";
 import { BsFillBagCheckFill } from "react-icons/bs";
 import { Link, Navigate } from "react-router-dom";
+import { AuthContext } from "../context/AuthContext";
 
 const Navbar = () => {
+
+  const { setToken ,setIsAuth,logout} = useContext(AuthContext)
 
   const handleClick = () => {
     console.log("hello brother")
@@ -36,6 +39,16 @@ const Navbar = () => {
   const signUpfunc = () => {
     return <Navigate to="/login" />
   }
+
+  const logoutFunc = () => {
+    setIsAuth(false)
+    logout()
+    setToken("")
+    
+    return <Navigate to="/login" />
+
+  }
+  
   
 
   return (
@@ -174,6 +187,22 @@ const Navbar = () => {
                   </Box>
                   <ChevronRightIcon />
                 </MenuItem>
+
+                <Link to="/"><MenuItem
+                  _hover={{ textDecoration: "underline", background: "none" }}>
+                  <Box
+                    paddingY={1}
+                    paddingX={2}
+                    fontSize={"14px"}
+                    color="#000000"
+                    fontFamily={"Roboto, Helvetica, Arial, sans-serif"}
+                    w={["100px", "150px", "200px"]}>
+                    <button data-testid="logout-btn" onClick={logoutFunc}>Logout</button>
+                  </Box>
+                  <ChevronRightIcon />
+                </MenuItem></Link>
+
+                
               </MenuList>
             </Menu>
           </Flex>

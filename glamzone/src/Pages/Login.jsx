@@ -9,8 +9,8 @@ import { Box, Center, Text } from "@chakra-ui/react";
 
 function Login() {
 
-  const [email, setEmail] = useState("eve.holt@reqres.in")
-  const [password, setPassword] = useState("cityslicka")
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
   const {login, isAuth} = useContext(AuthContext)
   const [disabled, setDisabled] = useState(false)
 
@@ -39,9 +39,8 @@ function Login() {
   };
 
   if(isAuth){
-
     return <Navigate to="/" />
-  }
+  } 
 
 
   return (
