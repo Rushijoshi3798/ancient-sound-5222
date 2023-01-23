@@ -17,7 +17,7 @@ function AuthContextProvider({children}) {
     }
 
     return (
-        <AuthContext.Provider value={{isAuth, token, login, logout}}>{children}</AuthContext.Provider>
+        <AuthContext.Provider value={{isAuth, setToken, token, login, logout}}>{children}</AuthContext.Provider>
     )
 
 }

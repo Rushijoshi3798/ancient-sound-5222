@@ -10,6 +10,7 @@ import {
 import React from "react";
 import Navbar from "../Components/Navbar";
 import { Link, Navigate } from "react-router-dom"
+import Footer from "../Components/Footer";
 
 const Home = () => {
 
@@ -360,7 +361,7 @@ const Home = () => {
       </div>
 
       <HStack
-        border={"1px solid black"}
+       
         marginTop={"20px"}
         marginBottom={"20px"}
         p={10}>
@@ -459,8 +460,8 @@ const Home = () => {
             </Text>
           </VStack>
         </HStack>
-      </HStack>
-
+      </HStack><hr></hr>
+      <Footer />
       <Box></Box>
     </div>
   );
