@@ -21,8 +21,23 @@ import {
 } from "@chakra-ui/icons";
 import { MdLocationOn } from "react-icons/md";
 import { BsFillBagCheckFill } from "react-icons/bs";
+import { Link, Navigate } from "react-router-dom";
 
 const Navbar = () => {
+
+  const handleClick = () => {
+    console.log("hello brother")
+    // let value = {
+    //   pageName: e.target.value
+    // };
+    return <Navigate to="/products" />
+  }
+
+  const signUpfunc = () => {
+    return <Navigate to="/login" />
+  }
+  
+
   return (
     <div>
       <Flex
@@ -101,7 +116,10 @@ const Navbar = () => {
                   lg: "none",
                 }}
                 w={["100px", "250px", "200px"]}>
+
+                <Link to="/login">
                 <MenuItem
+                onClick={signUpfunc}
                   _hover={{ textDecoration: "underline", background: "none" }}>
                   <Box
                     paddingY={1}
@@ -113,7 +131,7 @@ const Navbar = () => {
                     Sign In
                   </Box>
                   <ChevronRightIcon />
-                </MenuItem>
+                </MenuItem></Link>
 
                 <MenuItem
                   _hover={{ textDecoration: "underline", background: "none" }}>
@@ -150,7 +168,7 @@ const Navbar = () => {
                     paddingX={2}
                     fontSize={"14px"}
                     color="#000000"
-                    fontFamily={"Roboto, Helvetica, Arial, sans-serif;"}
+                    fontFamily={"Roboto, Helvetica, Arial, sans-serif"}
                     w={["100px", "150px", "200px"]}>
                     My VIP Rewards
                   </Box>
@@ -197,24 +215,33 @@ const Navbar = () => {
           fontFamily={"Roboto, Helvetica, Arial, sans-serif;"}
           h="10px"
           p={4}>
-          <Flex
+          <Link to="/products"><Flex
+          onClick={() => {
+            handleClick()
+            }}
             _hover={{ cursor: "pointer", borderBottom: "2px solid black" }}
             p={2}
             px={4}>
             Women
-          </Flex>
-          <Flex
+          </Flex></Link>
+          <Link to="/products"><Flex
+          onClick={() => {
+            handleClick()
+            }}
             _hover={{ cursor: "pointer", borderBottom: "2px solid black" }}
             p={2}
             px={4}>
             Men
-          </Flex>
-          <Flex
+          </Flex></Link>
+          <Link to="/products"><Flex
+          onClick={() => {
+            handleClick()
+            }}
             _hover={{ cursor: "pointer", borderBottom: "2px solid black" }}
             p={2}
             px={4}>
             Kids
-          </Flex>
+          </Flex></Link>
           <Flex
             _hover={{ cursor: "pointer", borderBottom: "2px solid black" }}
             p={2}

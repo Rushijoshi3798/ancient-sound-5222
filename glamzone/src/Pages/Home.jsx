@@ -9,8 +9,17 @@ import {
 } from "@chakra-ui/react";
 import React from "react";
 import Navbar from "../Components/Navbar";
+import { Link, Navigate } from "react-router-dom"
 
 const Home = () => {
+
+  const handleClick = () => {
+    console.log("hello brother")
+    // let value = {
+    //   pageName: e.target.value
+    // };
+    return <Navigate to="/products" />
+  }
   return (
     <div>
       <Navbar />
@@ -64,7 +73,12 @@ const Home = () => {
             }}>
             Your Kind of Boots at Your kind of Prices
           </p>
+          <Link to="/products">
           <button
+            value="women"
+            onClick={() => {
+              handleClick()
+            }}
             style={{
               position: "absolute",
               top: "60%",
@@ -83,8 +97,13 @@ const Home = () => {
               textDecoration: "underline",
             }}>
             SHOP WOMEN'S
-          </button>
-          <button
+          </button></Link>
+          <Link to="/products">
+            <button
+            value="men"
+            onClick={() => {
+            handleClick()
+            }}
             style={{
               position: "absolute",
               top: "60%",
@@ -103,7 +122,7 @@ const Home = () => {
               textDecoration: "underline",
             }}>
             SHOP MEN'S
-          </button>
+          </button></Link>
         </div>
       </div>
 
